@@ -1,0 +1,49 @@
+ERROR 2017-02-08 10:18:03,424 views 6411 140350626912000 邮件发送失败: (535, b'5.7.8 authentication failed')
+ERROR 2017-06-25 14:25:30,052 exception 12404 5972 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\env\blogproject_env\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\env\blogproject_env\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: app_article
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\env\blogproject_env\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\env\blogproject_env\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\env\blogproject_env\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\env\blogproject_env\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\env\blogproject_env\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\env\blogproject_env\lib\site-packages\django\views\generic\list.py", line 160, in get
+    self.object_list = self.get_queryset()
+  File "E:\surenck\blog\app\views.py", line 29, in get_queryset
+    for article in article_list:
+  File "C:\env\blogproject_env\lib\site-packages\django\db\models\query.py", line 250, in __iter__
+    self._fetch_all()
+  File "C:\env\blogproject_env\lib\site-packages\django\db\models\query.py", line 1105, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\env\blogproject_env\lib\site-packages\django\db\models\query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "C:\env\blogproject_env\lib\site-packages\django\db\models\sql\compiler.py", line 886, in execute_sql
+    raise original_exception
+  File "C:\env\blogproject_env\lib\site-packages\django\db\models\sql\compiler.py", line 876, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\env\blogproject_env\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\env\blogproject_env\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\env\blogproject_env\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\env\blogproject_env\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\env\blogproject_env\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\env\blogproject_env\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: app_article
